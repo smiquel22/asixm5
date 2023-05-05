@@ -1,0 +1,101 @@
+<!-- Primera version --> 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Encuesta de Ciudades</title>
+	<meta charset="UTF-8">
+	<style>
+		body {
+			background-color: #B2DFDB; /* fondo de color verde flojo */
+			font-family: 'Montserrat', sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		h1 {
+			color: #333333;
+			font-size: 36px;
+			margin-top: 50px;
+			text-align: center;
+		}
+
+		form {
+			background-color: #ffffff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			margin: 50px auto;
+			max-width: 500px;
+			padding: 20px;
+			text-align: center;
+		}
+
+		input[type="radio"] {
+			display: none;
+		}
+
+		label {
+			background-color: #B2DFDB; /* fondo de color verde flojo */
+			border-radius: 5px;
+			cursor: pointer;
+			display: inline-block;
+			font-size: 18px;
+			padding: 10px 20px;
+			transition: background-color 0.3s ease-in-out;
+		}
+
+		label:hover {
+			background-color: #81C784; /* color más claro para hover */
+		}
+
+		input[type="radio"]:checked + label {
+			background-color: #4CAF50; /* color verde más intenso para la opción seleccionada */
+			color: #ffffff;
+		}
+
+		button {
+			background-color: lightcoral;
+			border: none;
+			border-radius: 5px;
+			color: #ffffff;
+			cursor: pointer;
+			font-size: 18px;
+			margin-top: 20px;
+			padding: 10px 20px;
+			transition: background-color 0.3s ease-in-out;
+		}
+
+		button:hover {
+			background-color: red; /* color verde más oscuro para hover */
+		}
+
+		footer {
+			background-color: #333333; /* fondo de color gris oscuro para el footer */
+			color: #ffffff;
+			font-size: 7px;
+			padding: 10px;
+			text-align: center;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<h1>¿Cuál es tu ciudad favorita?</h1>
+	<form>
+		<input type="radio" id="barcelona" name="ciudad" value="barcelona">
+		<label for="barcelona">Barcelona</label><br><br>
+		<input type="radio" id="sevilla" name="ciudad" value="sevilla">
+		<label for="sevilla">Sevilla</label><br><br>
+		<button type="button" onclick="enviarEncuesta()">Enviar</button>
+	</form>
+	<footer>Victor te amo &lt;3</footer>
+	<script>
+		function enviarEncuesta() {
+			var ciudad = document.querySelector('input[name="ciudad"]:checked').value;
+			var url = 'http://servidor/html?ciudad=' + ciudad;
+			window.location.href = url;
+		}
+	</script>
+</body>
+</html
